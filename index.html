@@ -1,3 +1,148 @@
+<style>
+		/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: gold;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:80%;
+        text-align: center;
+        margin: 8px;
+    }
+    .socialIcons a{
+        padding: 6px;
+        margin: 2px;
+    }
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  
+  justify-content: center;
+  align-items: center;
+  background: #0f0f0f;
+}
+.sm a{
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 36px;
+  width: 60px;
+  height: 60px;
+  color: #f0f0f0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 8px;
+}
+.sm a::before{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: -1;
+  transition: transform .3s ease-in;
+}
+.sm a:nth-child(1)::before{
+  background: #38529a;
+}
+.sm a:nth-child(2)::before{
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+.sm a:nth-child(3)::before{
+  background: #1c96e9;
+}
+.sm a:nth-child(4)::before{
+  background: #f70000;
+}
+.sm a:nth-child(5)::before{
+  background: #046596;
+}
+.sm a:hover::before{
+  transform: scale(0);
+}
+.sm a i{
+  transition: transform .3s ease-in;
+}
+.sm a:nth-child(1):hover i{
+  background: #38529a;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.5);
+}
+.sm a:nth-child(2):hover i{
+  background: linear-gradient(45deg, #f09433 0%,green 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.5);
+}
+.sm a:nth-child(3):hover i{
+  background: #00BFFF;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.5);
+}
+.sm a:nth-child(4):hover i{
+  background: #2F4F4F;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.5);
+}
+.sm a:nth-child(5):hover i{
+  background: #F0F8FF;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.5);
+}
+
+        </style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +175,6 @@
                    <a href="#">Home</a>
                 </li>
                 </li>
-                <li class="menu-item">
-                   <a href="#">About</a>
-                </li>
                 <li class="menu-item menu-item-has-children">
                    <a href="#" data-toggle="sub-menu">Vless Accounts <i class="plus"></i></a>
                    <ul class="sub-menu">
@@ -53,18 +195,39 @@
                        <li class="menu-item"><a href="#">KOSONG</a></li>
                    </ul>
                 </li>
-                <li class="menu-item">
-                   <a href="#">News</a>
+                   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<body> 
+	
+  <div class="sm">
+    
+  </div>
+   </li>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                   <a href="#" data-toggle="sub-menu">Contact<i class="plus"></i></a>
+                   
+                   <ul class="sub-menu">
+                   	<div class="sm">
+                       <li class="menu-item"><a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a><br>
+                       <li class="menu-item"><a href="https://wa.me/6282339191527"><i class="fab fa-whatsapp"></i></a><br>
+                       <li class="menu-item"><a href="https://t.me/sampiiiiu"><i class="fab fa-telegram"></i></a><br>
+					   <li class="menu-item"><a href="https://github.com/jaka1m"><i class="fab fa-github"></i></a><br>
+					   </ul>
                 </li>
                 <li class="menu-item">
-                   <a href="https://t.me/sampiiiiu">Contact</a>
+                   <a href="#">About</a>
                 </li>
-             </ul>
-           </nav>
+                <div class="footerBottom">
+        <p>Copyright &copy <span class="designer">Geo Project</span></p>
+    </div>
+</footer>
            <!-- navigation menu end -->
         </div>
      </div>
   </header>
+  
   <!-- header end -->
 
  <!-- home section start -->
