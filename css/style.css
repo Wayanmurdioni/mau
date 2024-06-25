@@ -198,7 +198,7 @@ a{
 	width: 100%;
 	display: block;
 	min-height: 100vh;
-	background-image: url('../img/home.jpg');
+	background-image: url('https://raw.githubusercontent.com/jaka2m/mau/kepo/download.jpg');
 	background-position: center top;
 	background-size: cover;
 }
