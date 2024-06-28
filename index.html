@@ -1,128 +1,80 @@
 <style>
-/* Hover affect on social media icon */
-.socialIcons a:hover{
-    background-color: #0000;
+.slider{
+    width: 250px;
+    max-width: 100vw;
+    height: 700px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+.slider .list{
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+.slider .list img{
+    width: 1300px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.slider .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.slider .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.slider .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
     transition: 0.5s;
 }
-.socialIcons a:hover i{
-    color: black;
-    transition: 0.5s;
+.slider .dots li.active{
+    width: 30px;
 }
-
-.footerBottom{
-    background-color: #000;
-    padding: 20px;
-    text-align: center;
-}
-.footerBottom p{
-    color: gold;
-}
-.designer{
-    opacity: 0.7;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    margin: 0px 5px;
-}
-@media (max-width: 700px){
-    .footerNav ul{
-        flex-direction: column;
-    } 
-    .footerNav ul li{
-        width:80%;
-        text-align: center;
-        margin: 8px;
-    }
-    .socialIcons a{
-        padding: 6px;
-        margin: 2px;
+@media screen and (max-width: 768px){
+    .slider{
+        height: 400px;
     }
 }
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.flex>img {
+  background-color: #fff;
+  height: 50px;
+  margin: 5px;
+  border-radius: 16px;
+  text-align: center;
 }
-body{
-  height: 100vh;
-  
-  justify-content: center;
-  align-items: center;
-  background: #0f0f0f;
-}
-.sm a{
-  display: inline-flex;
-  text-decoration: none;
-  font-size: 36px;
-  width: 60px;
-  height: 60px;
-  color: #f0f0f0;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 0 8px;
-}
-.sm a::before{
-  content: '';
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  z-index: -1;
-  transition: transform .3s ease-in;
-}
-.sm a:nth-child(1)::before{
-  background: #38529a;
-}
-.sm a:nth-child(2)::before{
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-}
-.sm a:nth-child(3)::before{
-  background: #1c96e9;
-}
-.sm a:nth-child(4)::before{
-  background: #f70000;
-}
-.sm a:nth-child(5)::before{
-  background: #046596;
-}
-.sm a:hover::before{
-  transform: scale(0);
-}
-.sm a i{
-  transition: transform .3s ease-in;
-}
-.sm a:nth-child(1):hover i{
-  background: #38529a;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(1.5);
-}
-.sm a:nth-child(2):hover i{
-  background: linear-gradient(45deg, #f09433 0%,green 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(1.5);
-}
-.sm a:nth-child(3):hover i{
-  background: #00BFFF;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(1.5);
-}
-.sm a:nth-child(4):hover i{
-  background: #2F4F4F;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(1.5);
-}
-.sm a:nth-child(5):hover i{
-  background: #F0F8FF;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(1.5);
-}
-
         </style>
 <style>
 	/* PANNEL */
@@ -154,8 +106,7 @@ body{
     background-color: var(--color_Dark1);
     transition: all .5s ease;
     z-index: 100;
-	background-image: url('https://raw.githubusercontent.com/jaka2m/mau/kepo/sange.jpg');
-}
+	}
 .sidebar.close{
     width: 78px;
 }
@@ -361,9 +312,13 @@ body{
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- boostrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
+  <link rel="stylesheet" href="style.css">
+  	
     <title>VPN FREE</title>
 
     <!-- Box Icons  -->
@@ -552,70 +507,63 @@ body{
             <i class='bx bx-menu'></i>
              <!-- <div class="text">Toggle</div> -->
         </div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE VLESS WORKERS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
-</marquee>
-</center>
-		<br>
-			<br>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<link rel="stylesheet" href="style.css" />
-</head>
-<body> 
-  
-</body>
-</html>
-<br> 
-	<br> 
-		<br> 
-	<br> 
-		<br>
-			<br> 
-	<br> 
-		<br> 
-	<br> 
-		<br>
-			<br> 
-		<br>
-			<br>
-			<br>
-			<center><div class="sm">
-    <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://wa.me/6282339191527"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://t.me/sampiiiiu"><i class="fab fa-telegram"></i></a>
-      </div>
-    <div class="footerBottom">
-        <p>Copyright &copy 2024 Made By ♥️<span class="designer">. rights reserved</span></p>
+		<!-- layout start -->
+  <div class="container-fluid text-light mt-2">
+    <!-- carousel start -->
+    <body>
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="assets/img/1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/4.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/5.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/6.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/7.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/8.jpg" alt="">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
+<!-- footer -->
+<footer class="bg-light text-dark mt-5" style="height: 140px;">
+  <div class="mx-auto max-w-screen-2xl px-3 py-6 sm:px-6 lg:px-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <div class="flex justify-center text-indigo-400 sm:justify-start text-center">
+        <img src="assets/img/logo.jpg" width="230" height="1000">
+        <div><i><h6>FREE VLESS & TROJAN</h6></i>
+      <p>Copyright &copy; 2024. All rights reserved</p>
+  </div>
 </footer>
-      </div>
-    </div>
-  </body>
-</html>
-    </section>
+</section>
 
     <!-- Link JS -->
-    <script src="main.js"></script>
-</body>
-
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/app.js"></script>
+    </body>
 </html>
