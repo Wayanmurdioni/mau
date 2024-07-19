@@ -1,39 +1,31 @@
-const backgrounds = [
-    'https://raw.githubusercontent.com/jaka2m/mau/kepo/assets/img/1.jpg',
-    'https://raw.githubusercontent.com/jaka2m/mau/kepo/assets/img/2.jpg',
-    'https://raw.githubusercontent.com/jaka2m/mau/kepo/assets/img/3.jpg',
-    'https://raw.githubusercontent.com/jaka2m/mau/kepo/assets/img/4.jpg',
-    'https://raw.githubusercontent.com/jaka2m/mau/kepo/assets/img/5.jpg',
-    'https://raw.githubusercontent.com/jaka2m/mau/kepo/assets/img/6.jpg',
-    'https://raw.githubusercontent.com/jaka2m/mau/kepo/assets/img/7.jpg',
-    'https://raw.githubusercontent.com/jaka2m/mau/kepo/assets/img/8.jpg'
-];
 
-const icons = [
-    'fa-sun', 'fa-moon', 'fa-star', 'fa-cloud', 'fa-snowflake', 'fa-rain', 'fa-sun', 'fa-moon'
-];
+    function copyText(elementId) {
+        const element = document.getElementById(elementId);
+        if (!element) {
+            console.error("Element with ID", elementId, "not found.");
+            return;
+        }
 
-let currentThemeIndex = 0;
-let currentIconIndex = 0;
+        const text = element.textContent.trim();
+        if (!text) {
+            console.error("Element with ID", elementId, "has no text content.");
+            return;
+        }
 
-const change = document.querySelector("#switch");
-const themeIcon = document.querySelector("#theme-icon");
+        // Menyalin teks ke clipboard
+        navigator.clipboard.writeText(text).then(() => {
+            // Animasi sementara untuk memberi umpan balik visual bahwa teks telah disalin
+            const originalBackgroundColor = element.style.backgroundColor;
+            element.style.backgroundColor = "#f0f0f0";
+            setTimeout(() => {
+                element.style.backgroundColor = originalBackgroundColor;
+            }, 1000);
 
-change.addEventListener("click", changeTheme);
-
-function changeTheme() {
-    currentThemeIndex = (currentThemeIndex + 1) % backgrounds.length;
-    currentIconIndex = (currentIconIndex + 1) % icons.length;
-
-    document.body.style.background = `url('${backgrounds[currentThemeIndex]}') no-repeat center center fixed`;
-    document.body.style.backgroundSize = "cover";
-    themeIcon.className = `fas ${icons[currentIconIndex]}`;
-
-    // Add rotate class
-    change.classList.add("rotate");
-
-    // Remove rotate class after animation ends
-    setTimeout(() => {
-        change.classList.remove("rotate");
-    }, 1000); // Match the duration of the CSS animation
-}
+            // Pesan sukses
+            alert("Text copied to clipboard: " + text);
+        }).catch(err => {
+            // Penanganan error
+            console.error("Could not copy text: ", err);
+            alert("Could not copy text. Please try again.");
+        });
+    }
